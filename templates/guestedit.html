@@ -1,0 +1,249 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+  <script>
+        window.history.forward();
+    </script>
+  <title>Vishal PG</title>
+  <!-- Meta tag Keywords -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="keywords" content="Villas Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+  <script>
+    addEventListener("load", function () {
+      setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+      window.scrollTo(0, 1);
+    }
+  </script>
+  <!-- //Meta tag Keywords -->
+
+  <!-- Custom-Files -->
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+  <!-- Bootstrap-Core-CSS -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" />
+  <!-- Style-CSS -->
+  <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+  <!-- Font-Awesome-Icons-CSS -->
+  <!-- //Custom-Files -->
+
+  <!-- Web-Fonts -->
+  <link href="//fonts.googleapis.com/css?family=Crimson+Text:400,400i,600,600i,700,700i" rel="stylesheet">
+  <link href="//fonts.googleapis.com/css?family=Oxygen:300,400,700&amp;subset=latin-ext" rel="stylesheet">
+  <!-- //Web-Fonts -->
+</head>
+
+<body>
+  <!-- main banner -->
+  <div class="main-top" id="home">
+    <!-- header -->
+    <header>
+      <div class="container-fluid">
+        <div class="header d-md-flex justify-content-between align-items-center py-3 px-xl-5 px-lg-3 px-2">
+          <!-- logo -->
+          <div id="logo">
+            <h1><a href="index.html">Vishal PG</a></h1>
+          </div>
+          <!-- //logo -->
+          <!-- nav -->
+          <div class="nav_w3ls">
+           <nav>
+              <label for="drop" class="toggle">Menu</label>
+              <input type="checkbox" id="drop" />
+              <p><h3 style="color:white;">Welcome : Admin</h3></p>
+              <ul class="menu">
+                <li><a href="/admin_home/" class="active">Home</a></li>
+
+                <li>
+                  <!-- First Tier Drop Down -->
+                  <label for="drop-2" class="toggle toogle-2">Add Info <span class="fa fa-angle-down" aria-hidden="true"></span>
+                  </label>
+                  <a href="#">Add Info <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                  <input type="checkbox" id="drop-2" />
+                  <ul>
+                    <li><a href="{% url 'pgdetails' %}" class="drop-text">PG Details</a></li>
+                                    <li><a href="{% url 'guestdetails' %}" class="drop-text">Guest Details</a></li>
+                                        <li><a href="{% url 'expense' %}" class="drop-text">Expense Details</a></li>
+                    <li><a href="{% url 'payment_card' %}" class="drop-text">Payment Card</a></li>
+
+                  </ul>
+                </li>
+
+
+                <li>
+                  <!-- First Tier Drop Down -->
+                  <label for="drop-2" class="toggle toogle-2">Reports <span class="fa fa-angle-down" aria-hidden="true"></span>
+                  </label>
+                  <a href="#">Reports <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                  <input type="checkbox" id="drop-2" />
+                  <ul>
+                    <li><a href="{% url 'pgview' %}" class="drop-text">PG View</a></li>
+                                    <li><a href="{% url 'expenseview' %}" class="drop-text">Expense Details</a></li>
+                                    <li><a href="{% url 'guestview' %}" class="drop-text">Guest View</a></li>
+                    <li><a href="{% url 'paycardview' %}" class="drop-text">Paycard View</a></li>
+                    <li><a href="{% url 'monthly_report' %}" class="drop-text">Monthly Collection Report</a></li
+
+                  <li><a href="{% url 'yearly_report' %}" class="drop-text">Yearly Collection Report</a></li>
+
+                  </ul>
+                </li>
+                <li><a href="{% url 'index' %} ">Logout</a></li>
+              </ul>
+            </nav>
+          </div>
+          <!-- //nav -->
+        </div>
+      </div>
+    </header>
+    <!-- //header -->
+
+    <!-- banner -->
+    <div class="banner_w3lspvt-2">
+
+    </div>
+    <!-- //banner -->
+  </div>
+  <!-- //main banner -->
+
+  <!-- page details -->
+  <div class="breadcrumb-mobamu">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        
+      </li>
+      
+    </ol>
+  </div>
+  <!-- //page details -->
+
+  <!-- booking form -->
+  <div class="register-w3 py-5">
+    <div class="container py-xl-5 py-lg-3">
+      <h3 class="tittle text-center text-bl font-weight-bold">Edit Guest Information</h3>
+      
+      <div class="comment-top mt-5">
+        <div class="comment-bottom mobamuinfo_mail_grid_right">
+<body>
+<form method="POST"  enctype="multipart/form-data" action="{%url 'guest_db' %}">
+    {% csrf_token %}
+ {% for r in useritem %}
+<table width="400" height="400" align="center">
+    <input type="hidden" name="id" value="{{r.id}}">
+ <tr>
+     <td width="169">Joining Date</td>
+      <td><input type="text" name="t1" value="{{r.Date}}"></td>
+  </tr>
+  <tr>
+    <td>Pg Id</td>
+    <td><input type="text" name="t2"value="{{r.PGid}}"></td>
+  </tr>
+  <tr>
+    <td>Guest Id</td>
+    <td><input type="text" name="t3"value="{{r.Custid}}" ></td>
+  </tr>
+  <tr>
+    <td>Book Id</td>
+    <td>
+      <input type="text" name="t4" value="{{r.Bookid}}"></td>
+  </tr>
+  <tr>
+    <td>Name</td>
+    <td><input type="text" name="t5"  value="{{r.Studentname}}"></td>
+  </tr>
+  <tr>
+    <td>Mobile No</td>
+    <td>
+      <input type="text" name="t6" value="{{r.Mobilenumber}}"></td>
+  </tr>
+  <tr>
+    <td>Permanent Address</td>
+    <td><input type="text" name="t7"  value="{{r.Permanentaddress}}" ></td>
+  </tr>
+  <tr>
+    <td>Room No</td>
+    <td><input type="text" name="t8"  value=" {{r.Roomno}}" ></td>
+  </tr>
+  <tr>
+    <td>City</td>
+    <td><input type="text" name="t9"  value="{{r.City}}"></td>
+  </tr>
+  <tr>
+    <td>Guest Type</td>
+    <td><input type="text" name="t10"  value="{{r.studenttype}}"></td>
+  </tr>
+  <tr>
+    <td>Deposit Amount</td>
+    <td><input type="text" name="t11"  value="{{r.Depositamount}}"></td>
+      <tr>
+      <td align="center" colspan="5"><label>
+      <input type="submit" name="button" id="button" value="Submit" disabled>
+      </label></td>
+  </tr>
+</table>
+    {%endfor%}
+
+</form>
+
+</div>
+      </div>
+    </div>
+  </div>
+  <!-- //booking form -->
+  <script>
+      function manage(txt) {
+          var bt = document.getElementById('button2');
+          console.log(bt);
+          if ((txt.value != '')&&(txt1.value != '')&&(txt2.value != '')&&(txt3.value != '')&&(txt6.value != '')&&(txt7.value != '')){
+            console.log("im HERE");
+              bt.disabled = false;
+          }
+          else {
+            console.log("EELSE");
+              bt.disabled = true;
+          }
+      }
+  </script>
+
+  <!-- footer -->
+  <footer class="py-5">
+    <div class="container pt-xl-4">
+      <div class="row footer-top">
+        <div class="col-lg-4 col-md-6 footer-grid_section_1its">
+          
+          <!-- Map -->
+          
+          <!-- //Map -->
+        </div>
+        
+        
+        <div class="col-lg-3 col-md-6 footer-grid_section_1its mt-lg-0 mt-4">
+          <!-- social icons -->
+          <div class="mobamuinfo_social_icons">
+            
+            
+            
+          </div>
+          <!-- social icons -->
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- //footer -->
+  <!-- copyright -->
+  <div class="cpy-right text-center py-3">
+    <p>© 2019 Vishal PG. All rights reserved
+    </p>
+  </div>
+  <!-- //copyright -->
+
+  <!-- move top icon -->
+  <a href="#home" class="move-top text-center"></a>
+  <!-- //move top icon -->
+
+</body>
+
+</html>

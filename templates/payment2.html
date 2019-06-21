@@ -1,0 +1,172 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <script>
+        window.history.forward();
+    </script>
+    <title>Vishal PG</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="Villas Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- //Meta tag Keywords -->
+
+    <!-- Custom-Files -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <!-- Bootstrap-Core-CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" />
+    <!-- Style-CSS -->
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+    <!-- Font-Awesome-Icons-CSS -->
+    <!-- //Custom-Files -->
+
+    <!-- Web-Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Crimson+Text:400,400i,600,600i,700,700i" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Oxygen:300,400,700&amp;subset=latin-ext" rel="stylesheet">
+    <!-- //Web-Fonts -->
+</head>
+
+<body>
+    <!-- main banner -->
+    <div class="main-top" id="home">
+        <!-- header -->
+        <header>
+            <div class="container-fluid">
+                <div class="header d-md-flex justify-content-between align-items-center py-3 px-xl-5 px-lg-3 px-2">
+                    <!-- logo -->
+                    <div id="logo">
+                        <h1><a href="index.html">Vishal PG</a></h1>
+                    </div>
+                    <!-- //logo -->
+                    <!-- nav -->
+                    <div class="nav_w3ls">
+                        <nav>
+                            <label for="drop" class="toggle">Menu</label>
+                            <input type="checkbox" id="drop" />
+                            <p style="color:blue"> Welcome : Guest</p>
+                            <ul class="menu">
+                                <li><a href="{% url 'guest_home' %}" class="active">Home</a></li>
+                                <li><a href="{% url 'book_pg' %}"> Book PG</a></li>
+                                <li><a href="{% url 'book_status' %}">Booking Status</a></li>
+                                <li><a href="{% url 'paymentcardguest' %}">Payment Card</a></li>
+                                 <li><a href="{% url 'feedback' %}">Feedback</a></li>
+                                <li>
+                                    <!-- First Tier Drop Down -->
+                                    <label for="drop-2" class="toggle toogle-2">My Account <span class="fa fa-angle-down" aria-hidden="true"></span>
+                                    </label>
+                                    <a href="#">My Account <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                                    <input type="checkbox" id="drop-2" />
+                                    <ul>
+                                        <li><a href="{% url 'changepassword' %}" class="drop-text">Change Password</a></li>
+                                        <li><a href="{% url 'index' %}" class="drop-text"> Logout</a></li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- //nav -->
+                </div>
+            </div>
+        </header>
+        <!-- //header -->
+
+        <!-- banner -->
+        <div class="banner_w3lspvt-2">
+
+        </div>
+        <!-- //banner -->
+    </div>
+    <!-- //main banner -->
+
+    <!-- page details -->
+    <div class="breadcrumb-mobamu">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                
+            </li>
+            
+        </ol>
+    </div>
+    <!-- //page details -->
+
+    <!-- booking form -->
+    <div class="register-w3 py-5">
+        <div class="container py-xl-5 py-lg-3">
+            <h3 class="tittle text-center text-bl font-weight-bold">Payment</h3>
+            
+            <div class="comment-top mt-5">
+                <div class="comment-bottom mobamuinfo_mail_grid_right">
+
+<form action="/bill_generate/" method="POST">
+    {% csrf_token %}
+<script
+    src="https://checkout.razorpay.com/v1/checkout.js"
+    data-key="rzp_test_8Th6ZvuOOIOtC8"
+    data-amount="{{amount}}00"
+    data-buttontext="Pay with Razorpay"
+    data-name="Pay Amount"
+    data-description="Vishal Ladies PG"
+    data-image=""
+    data-prefill.name="Vishal Ladies PG"
+    data-prefill.email="vishalenterpriser11@gmail.com"
+    data-theme.color="#F37254"></script>
+   
+<input type="hidden" custom="Hidden Element" name="hidden">
+</form>
+</div>
+    </div>
+    </div>
+    </div>
+    <!-- //booking form -->
+
+    <!-- footer -->
+    <footer class="py-5">
+        <div class="container pt-xl-4">
+            <div class="row footer-top">
+                <div class="col-lg-4 col-md-6 footer-grid_section_1its">
+                    
+                    <!-- Map -->
+                    
+                    <!-- //Map -->
+                </div>
+                
+                
+                <div class="col-lg-3 col-md-6 footer-grid_section_1its mt-lg-0 mt-4">
+                    <!-- social icons -->
+                    <div class="mobamuinfo_social_icons">
+                        
+                        
+                        
+                    </div>
+                    <!-- social icons -->
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- //footer -->
+    <!-- copyright -->
+    <div class="cpy-right text-center py-3">
+        <p>© 2019 Vishal PG. All rights reserved
+        </p>
+    </div>
+    <!-- //copyright -->
+
+    <!-- move top icon -->
+    <a href="#home" class="move-top text-center"></a>
+    <!-- //move top icon -->
+
+</body>
+
+</html>

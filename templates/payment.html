@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<div align="center">Payment</div>
+<form method="post">
+  {% csrf_token %}
+<table width="618" align="center">
+  <tr>
+    <td width="246">Guest Id</td>
+    <td width="263"><label>
+      <input type="text" name="t1" id="t1" style=" width:200px;" />
+    </label></td>
+  </tr>
+  <tr>
+    <td>Room No</td>
+    <td><input type="text" name="t2" id="t2" style=" width:200px;" /></td>
+  </tr>
+  <tr>
+    <td>Cost</td>
+    <td><input type="text" name="t3" id="t3" style=" width:200px;" /></td>
+  </tr>
+  <tr>
+    <td>Paid Amount</td>
+    <td><label>
+      <input type="text" name="t4" id="t4" style=" width:200px;" />
+    </label></td>
+  </tr>
+  <tr>
+    <td>Balance</td>
+    <td><input type="text" name="t5" id="t5" style=" width:200px;" /></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><label>
+      <input type="submit" name="button" id="button" value="Submit" style="background-color:#000099; color:#FFFFFF; width:100px;"/>
+      <input type="reset" name="button2" id="button2" value="Reset" style="background-color: #009900; color:#FFFFFF; width:100px;" />
+    </label></td>
+  </tr>
+</table>
+</form>
+</body>
+</html>
